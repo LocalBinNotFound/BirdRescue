@@ -107,7 +107,13 @@ public class Conservatory {
     }
 
     public String printMap() {
-        return "For ";
+        String map = "Printing all aviaries and birds they house:\n";
+        return map;
+    }
+
+    public String printIndex() {
+        String index = "Printing all birds in alphabetical order and their aviary location:]n";
+        return index;
     }
 
 }
