@@ -14,7 +14,6 @@ public class Parrot extends Bird {
     private String favoriteSaying;
 
     public Parrot() {
-
     }
 
     public Parrot(String name, BirdType type, String definingCharacteristic, Boolean extinct, int numberOfWings,

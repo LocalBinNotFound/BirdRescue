@@ -14,7 +14,6 @@ public class Owl extends Bird {
     private Boolean nocturnal;
 
     public Owl() {
-
     }
 
     public Owl(String name, BirdType type, String definingCharacteristic, Boolean extinct, int numberOfWings,
@@ -26,6 +25,7 @@ public class Owl extends Bird {
                FoodList[] preferredFood, Boolean migratory, float weight) {
         super(name, type, definingCharacteristic, extinct, numberOfWings, preferredFood, migratory, weight);
     }
+
     public Owl(String name, BirdType type, String definingCharacteristic, Boolean extinct, int numberOfWings,
                FoodList[] preferredFood, Boolean migratory, float weight, Boolean facialDisk, String facialDiskColor,
                Boolean nocturnal) {

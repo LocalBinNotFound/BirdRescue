@@ -5,7 +5,7 @@ import enums.FoodList;
 import enums.WaterType;
 
 /**
- * Represents a shorebird that lives near water sources.
+ * Represents a shorebird that lives near water sources but has long legs for probing.
  * This class extends the {@link Birds.Bird} class and inherits its properties and behaviors.
  * @see Birds.Bird
  */
@@ -13,7 +13,6 @@ public class Shorebird extends BirdLiveNearWater{
     private int legLength;
 
     public Shorebird() {
-
     }
 
     public Shorebird(String name, BirdType type, String definingCharacteristic, Boolean extinct, int numberOfWings,

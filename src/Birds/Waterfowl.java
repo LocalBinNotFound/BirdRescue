@@ -5,7 +5,7 @@ import enums.FoodList;
 import enums.WaterType;
 
 /**
- * Represents a waterfowl that also lives near water but adapt to water environments.
+ * Represents a waterfowl that also lives near water but has long necks.
  * This class extends the {@link Birds.Bird} class and inherits its properties and behaviors.
  * @see Birds.Bird
  */
@@ -15,16 +15,18 @@ public class Waterfowl extends BirdLiveNearWater {
     private Boolean swim;
 
     public Waterfowl() {
-
     }
+
     public Waterfowl(String name, BirdType type, String definingCharacteristic, Boolean extinct, int numberOfWings,
                      FoodList[] preferredFood) {
         super(name, type, definingCharacteristic, extinct, numberOfWings, preferredFood);
     }
+
     public Waterfowl(String name, BirdType type, String definingCharacteristic, Boolean extinct, int numberOfWings,
                      FoodList[] preferredFood, Boolean migratory, float weight) {
         super(name, type, definingCharacteristic, extinct, numberOfWings, preferredFood, migratory, weight);
     }
+
     public Waterfowl(String name, BirdType type, String definingCharacteristic, Boolean extinct, int numberOfWings,
                      FoodList[] preferredFood, Boolean migratory, float weight, WaterType waterType, String waterName) {
         super(name, type, definingCharacteristic, extinct, numberOfWings, preferredFood, migratory, weight, waterType, waterName);

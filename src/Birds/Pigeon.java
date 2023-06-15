@@ -14,7 +14,6 @@ public class Pigeon extends Bird {
     private LocationList nestingLocation;
 
     public Pigeon() {
-
     }
 
     public Pigeon(String name, BirdType type, String definingCharacteristic, Boolean extinct, int numberOfWings,
