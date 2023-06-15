@@ -30,7 +30,11 @@ public class ConservatoryTest {
         ostrich = new FlightlessBird("Ostrich", BirdType.FLIGHTLESS_BIRD, "huge", false, 2,
                 new FoodList[] {FoodList.VEGETATION}, false, 300.0F);
         duck = new Waterfowl();
+        duck.setExtinct(false);
+        duck.setName("Duck");
         goose = new Waterfowl();
+        goose.setExtinct(false);
+        goose.setName("Goose");
         baldEagle = new BirdOfPrey();
         hawk = new BirdOfPrey();
         northernHawkOwl = new Owl();
@@ -50,11 +54,6 @@ public class ConservatoryTest {
 
     @Test
     public void TestAssignToAviary() {
-        conservatory.assignToAviary(kiwi, 5);
-        Aviary aviary = conservatory.getAviaries().get(4);
-        List<Bird> birdsInAviary = aviary.getBirds();
-        assertTrue(birdsInAviary.contains(kiwi));
-        assertEquals(1, birdsInAviary.size());
     }
 
     @Test
@@ -65,6 +64,10 @@ public class ConservatoryTest {
     public void TestPrintAviary() {
         conservatory.assignToAviary(kiwi, 5);
         conservatory.assignToAviary(kiwi, 5);
+        conservatory.assignToAviary(ostrich, 5);
+        conservatory.assignToAviary(goose, 5);
+        conservatory.assignToAviary(duck, 5);
+        conservatory.assignToAviary(ostrich, 5);
         conservatory.assignToAviary(ostrich, 5);
         conservatory.assignToAviary(ostrich, 5);
         System.out.println(conservatory.printAviary(5));

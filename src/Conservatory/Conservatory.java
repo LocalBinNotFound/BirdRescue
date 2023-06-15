@@ -10,6 +10,7 @@ public class Conservatory {
     private List<Bird> birds;
     private List<Aviary> aviaries;
     private final int numOfAviaries = 20;
+    private final int maxNumEachAviary = 5;
 
     public Conservatory() {
         birds = new ArrayList<>();
@@ -60,25 +61,22 @@ public class Conservatory {
             return;
         }
         Aviary aviary = aviaries.get(aviaryLocation - 1);
-        if (aviary.getNumberOfBirds() == 0 && !newBird.isExtinct()) {
-            aviary.addBird(newBird);
-        } else if (aviary.getNumberOfBirds() < 5 && !newBird.isExtinct()) {
-            if (isCertainBird(newBird,BirdType.FLIGHTLESS_BIRD) && aviary.containsCertainBird(BirdType.FLIGHTLESS_BIRD)) {
+        if (aviary.getNumberOfBirds() < maxNumEachAviary && !newBird.isExtinct()) {
+            if (aviary.getNumberOfBirds() == 0) {
                 aviary.addBird(newBird);
-                System.out.println("Rescued bird is " + newBird.getName() + ", a flightless bird.");
-                System.out.println("Rescued bird is assigned to Aviary " + aviaryLocation);
-            } else if (isCertainBird(newBird, BirdType.BIRD_OF_PREY) && aviary.containsCertainBird(BirdType.BIRD_OF_PREY)) {
-                aviary.addBird(newBird);
-                System.out.println("Rescued bird is " + newBird.getName() + ", a bird of prey.");
-                System.out.println("Rescued bird is assigned to Aviary " + aviaryLocation);
-            } else if (isCertainBird(newBird, BirdType.WATERFOWL) && aviary.containsCertainBird(BirdType.WATERFOWL)) {
-                aviary.addBird(newBird);
-                System.out.println("Rescued bird is " + newBird.getName() + ", a waterfowl.");
-                System.out.println("Rescued bird is assigned to Aviary " + aviaryLocation);
+                System.out.println(newBird.getName() + " is assigned to Aviary " + aviaryLocation);
             } else {
-                aviary.addBird(newBird);
-                System.out.println("Rescued bird is assigned to Aviary " + aviaryLocation);
+                if ((isCertainBird(newBird, BirdType.FLIGHTLESS_BIRD) && aviary.containsCertainBird(BirdType.FLIGHTLESS_BIRD))
+                        || (isCertainBird(newBird, BirdType.BIRD_OF_PREY) && aviary.containsCertainBird(BirdType.BIRD_OF_PREY))
+                        || (isCertainBird(newBird, BirdType.WATERFOWL) && aviary.containsCertainBird(BirdType.WATERFOWL))) {
+                    aviary.addBird(newBird);
+                    System.out.println(newBird.getName() + " is assigned to Aviary " + aviaryLocation);
+                } else {
+                    System.out.println(newBird.getName() + " cannot be assigned to this aviary!");
+                }
             }
+        } else {
+            System.out.println("This aviary is full and cannot add more birds!");
         }
     }
 
@@ -109,7 +107,7 @@ public class Conservatory {
     }
 
     public String printMap() {
-        return "  ";
+        return "For ";
     }
 
 }
