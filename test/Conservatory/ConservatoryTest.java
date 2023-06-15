@@ -26,16 +26,15 @@ public class ConservatoryTest {
     public void init() {
         conservatory = new Conservatory();
         kiwi = new FlightlessBird("Kiwi", BirdType.FLIGHTLESS_BIRD, "has loose feathers like fur and does not have wings",
-                false, 0, new FoodList[] {FoodList.SEEDS}, false, 6.0F);
+                false, 0, new FoodList[] {FoodList.SEEDS}, false, 6);
         ostrich = new FlightlessBird("Ostrich", BirdType.FLIGHTLESS_BIRD, "huge", false, 2,
-                new FoodList[] {FoodList.VEGETATION}, false, 300.0F);
-        duck = new Waterfowl();
-        duck.setExtinct(false);
-        duck.setName("Duck");
-        goose = new Waterfowl();
-        goose.setExtinct(false);
-        goose.setName("Goose");
-        baldEagle = new BirdOfPrey();
+                new FoodList[] {FoodList.VEGETATION}, false, 300);
+        duck = new Waterfowl("Duck", BirdType.WATERFOWL, "has yellow beak and can swim", false, 2,
+                new FoodList[] {FoodList.FISH, FoodList.AQUATIC_INVERTEBRATES}, true, 3.5F);
+        goose = new Waterfowl("Goose", BirdType.WATERFOWL, "known for its long neck and ability to swim", false, 2,
+                new FoodList[] {FoodList.FISH,FoodList.AQUATIC_INVERTEBRATES}, true, 10.5F);
+        baldEagle = new BirdOfPrey("Bald eagle", BirdType.BIRD_OF_PREY, "large bird with white head and yellow eyes",
+                false, 2, new FoodList[] {FoodList.OTHER_BIRDS, FoodList.SMALL_MAMMALS, FoodList.FISH}, true, 13);
         hawk = new BirdOfPrey();
         northernHawkOwl = new Owl();
     }
@@ -63,14 +62,14 @@ public class ConservatoryTest {
     @Test
     public void TestPrintAviary() {
         conservatory.assignToAviary(kiwi, 5);
-        conservatory.assignToAviary(kiwi, 5);
         conservatory.assignToAviary(ostrich, 5);
-        conservatory.assignToAviary(goose, 5);
-        conservatory.assignToAviary(duck, 5);
-        conservatory.assignToAviary(ostrich, 5);
-        conservatory.assignToAviary(ostrich, 5);
-        conservatory.assignToAviary(ostrich, 5);
+        conservatory.assignToAviary(goose, 6);
+        conservatory.assignToAviary(duck, 6);
+        conservatory.assignToAviary(baldEagle, 6);
+        conservatory.assignToAviary(baldEagle, 7);
         System.out.println(conservatory.printAviary(5));
+        System.out.println(conservatory.printAviary(6));
+        System.out.println(conservatory.printAviary(7));
     }
 
     @Test

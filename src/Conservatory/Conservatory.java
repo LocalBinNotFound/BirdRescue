@@ -72,7 +72,7 @@ public class Conservatory {
                     aviary.addBird(newBird);
                     System.out.println(newBird.getName() + " is assigned to Aviary " + aviaryLocation);
                 } else {
-                    System.out.println(newBird.getName() + " cannot be assigned to this aviary!");
+                    System.out.println(newBird.getName() + " cannot be assigned to Aviary " + aviaryLocation + "!");
                 }
             }
         } else {
