@@ -23,20 +23,12 @@ public class OwlTest {
     }
 
     @Test
-    public void TestFacialDisk() {
+    public void TestSettersAndGetters() {
         northernHawkOwl.setFacialDisk(true);
-        Assert.assertEquals(true,northernHawkOwl.hasFacialDisk());
-    }
-
-    @Test
-    public void TestFacialDiskColor() {
         northernHawkOwl.setFacialDiskColor("Beige");
-        Assert.assertEquals("Beige",northernHawkOwl.getFacialDiskColor());
-    }
-
-    @Test
-    public void TestNocturnal() {
         northernHawkOwl.setNocturnal(false);
+        Assert.assertEquals(true,northernHawkOwl.hasFacialDisk());
+        Assert.assertEquals("Beige",northernHawkOwl.getFacialDiskColor());
         Assert.assertEquals(false, northernHawkOwl.isNocturnal());
     }
 

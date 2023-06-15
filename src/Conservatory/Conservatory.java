@@ -4,6 +4,7 @@ import Birds.Bird;
 import enums.BirdType;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Conservatory {
@@ -84,7 +85,7 @@ public class Conservatory {
         for (int i = 0; i < aviaries.size(); i++) {
             Aviary aviary = aviaries.get(i);
             if (aviary.containsBird(newBird)) {
-                return "Bird found in Aviary " + i;
+                return "Bird found in Aviary " + (i+1);
             }
         }
         return "Bird is not found in any Aviary!";
@@ -100,19 +101,36 @@ public class Conservatory {
         } else {
             String sign = "Aviary " + aviaryLocation + " Description:\nBirds housed:\n";
             for (Bird bird : aviary.getBirds()) {
-                sign += bird.getName() + " - " + bird.getType() + " - " + bird.getDefiningCharacteristic() + "\n";
+                sign += " * " + bird.getName() + " - " + bird.getType() + " - " + bird.getDefiningCharacteristic() + "\n";
             }
             return sign;
         }
     }
 
     public String printMap() {
-        String map = "Printing all aviaries and birds they house:\n";
+        String map = "Printing aviary map:\n";
+        for (int i = 0; i < aviaries.size(); i++) {
+            map += "Aviary" + (i + 1) + ":\n";
+            Aviary aviary = aviaries.get(i);
+            if (aviary.getNumberOfBirds() == 0) {
+                map += "Empty!\n";
+            } else {
+                for (Bird bird : aviary.getBirds()) {
+                    map += " * " + bird.getName() + " - " + bird.getType() + " - " + bird.getDefiningCharacteristic() + "\n";
+                }
+            }
+        }
         return map;
     }
 
     public String printIndex() {
-        String index = "Printing all birds in alphabetical order and their aviary location:]n";
+        String index = "Printing all birds in alphabetical order and their aviary location:\n";
+        List<Bird> sortedBirds = new ArrayList<>();
+        sortedBirds.addAll(birds);
+        Collections.sort(sortedBirds);
+        for (Bird bird : sortedBirds) {
+            index += " * " + bird.getName() + " - " + lookUpAviary(bird) + "\n";
+        }
         return index;
     }
 

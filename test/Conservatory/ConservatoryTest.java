@@ -58,7 +58,7 @@ public class ConservatoryTest {
     @Test
     public void TestLookUpAviary() {
     }
-
+/*
     @Test
     public void TestPrintAviary() {
         conservatory.assignToAviary(kiwi, 5);
@@ -71,8 +71,21 @@ public class ConservatoryTest {
         System.out.println(conservatory.printAviary(6));
         System.out.println(conservatory.printAviary(7));
     }
-
+*/
     @Test
-    public void TestPrintMap() {
+    public void TestPrint() {
+        conservatory.rescueNewBird(kiwi);
+        conservatory.rescueNewBird(ostrich);
+        conservatory.rescueNewBird(goose);
+        conservatory.rescueNewBird(duck);
+        conservatory.rescueNewBird(baldEagle);
+        conservatory.assignToAviary(kiwi, 5);
+        conservatory.assignToAviary(ostrich, 5);
+        conservatory.assignToAviary(goose, 6);
+        conservatory.assignToAviary(duck, 6);
+        conservatory.assignToAviary(baldEagle, 7);
+        System.out.println(conservatory.printMap());
+        System.out.println(conservatory.printIndex());
+
     }
 }

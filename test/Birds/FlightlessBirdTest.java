@@ -11,8 +11,14 @@ public class FlightlessBirdTest {
 
     @Before
     public void init()  {
-        kiwi = new FlightlessBird("Kiwi", BirdType.OTHER_TYPE, "has loose feathers like fur and does not have wings",
-                false, 0, new FoodList[] {FoodList.SEEDS}, false, 6.0F);
+        kiwi = new FlightlessBird("Kiwi",
+                BirdType.OTHER_TYPE,
+                "has loose feathers like fur and does not have wings",
+                false,
+                0,
+                new FoodList[] {FoodList.SEEDS},
+                false,
+                6.0F);
     }
 
     @Test

@@ -11,9 +11,14 @@ public class ParrotTest {
 
     @Before
     public void init() {
-        africanGrey = new Parrot("African grey", BirdType.PARROT, "highly intelligent parrot that can say hundreds of words",
-                false, 2, new FoodList[]{FoodList.SEEDS, FoodList.FRUITS, FoodList.NUTS, FoodList.BERRIES, FoodList.VEGETATION},
-                false, 1.2F);
+        africanGrey = new Parrot("African grey",
+                BirdType.PARROT,
+                "highly intelligent parrot that can say hundreds of words",
+                false,
+                2,
+                new FoodList[]{FoodList.SEEDS, FoodList.FRUITS, FoodList.NUTS, FoodList.BERRIES, FoodList.VEGETATION},
+                false,
+                1.2F);
     }
 
     @Test

@@ -11,7 +11,7 @@ import java.util.Arrays;
  * about the bird's type, defining characteristics, extinct status,
  * number of wings, preferred food, migratory behavior, and weight.
  */
-public class Bird implements BirdInterface {
+public class Bird implements BirdInterface, Comparable<Bird> {
     private String name;
     private BirdType type;
     private String definingCharacteristic;
@@ -180,5 +180,10 @@ public class Bird implements BirdInterface {
                     definingCharacteristic + "\nExtinct: " + extinct + "\nNumber of Wings: " + numberOfWings +
                     "\nPreferred Food: " + Arrays.toString(preferredFood) + "\nMigratory: " + migratory +
                     "\nWeight: " + weight + " lbs";        }
+    }
+
+    @Override
+    public int compareTo(Bird otherBird) {
+        return this.getName().compareTo(otherBird.getName());
     }
 }
