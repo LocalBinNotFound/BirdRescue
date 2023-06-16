@@ -8,28 +8,30 @@ import java.util.List;
 public class Aviary {
     private List<Bird> birds;
 
+    // constructor
     public Aviary() {
         birds = new ArrayList<>(5);
-    }
-
-    public int getNumberOfBirds() {
-        return birds.size();
     }
 
     public List<Bird> getBirds() {
         return birds;
     }
 
-    public Boolean containsBird(Bird bird) {
-        return birds.contains(bird);
-    }
-
-    public void addBird(Bird newBird) {
-        birds.add(newBird);
+    public void addBird(Bird Bird) {
+        birds.add(Bird);
     }
 
     public void removeBird(Bird bird) {
         birds.remove(bird);
+    }
+
+    // helper methods in each aviary
+    public int getNumberOfBirds() {
+        return birds.size();
+    }
+
+    public Boolean containsBird(Bird bird) {
+        return birds.contains(bird);
     }
 
     public Boolean containsCertainBird(BirdType expectedType) {

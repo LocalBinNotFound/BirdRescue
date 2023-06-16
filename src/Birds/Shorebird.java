@@ -12,6 +12,7 @@ import enums.WaterType;
 public class Shorebird extends BirdLiveNearWater{
     private int legLength;
 
+    // constructors
     public Shorebird() {
     }
 
@@ -37,6 +38,7 @@ public class Shorebird extends BirdLiveNearWater{
         this.legLength = legLength;
     }
 
+    // setter and getter
     public void setLegLength(int legLength) {
         this.legLength = legLength;
     }

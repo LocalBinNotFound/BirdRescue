@@ -12,6 +12,7 @@ import enums.FoodList;
 public class BirdOfPrey extends Bird {
     Boolean sharpBeak;
 
+    // constructors
     public BirdOfPrey() {
     }
 
@@ -31,6 +32,7 @@ public class BirdOfPrey extends Bird {
         this.sharpBeak = sharpBeak;
     }
 
+    // setters and getters
     public void setSharpBeak(Boolean sharpBeak) {
         this.sharpBeak = sharpBeak;
     }

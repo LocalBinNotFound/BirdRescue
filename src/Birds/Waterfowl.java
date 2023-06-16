@@ -14,6 +14,7 @@ public class Waterfowl extends BirdLiveNearWater {
     private int neckLength;
     private Boolean swim;
 
+    // constructors
     public Waterfowl() {
     }
 
@@ -41,6 +42,7 @@ public class Waterfowl extends BirdLiveNearWater {
         this.swim = swim;
     }
 
+    // setters and getters
     public void setWebbedFeet(Boolean webbedFeet) {
         this.webbedFeet = webbedFeet;
     }

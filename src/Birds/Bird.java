@@ -4,6 +4,8 @@ import enums.BirdType;
 import enums.FoodList;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Represents a bird with various attributes and behaviors.
@@ -21,6 +23,7 @@ public class Bird implements BirdInterface, Comparable<Bird> {
     private Boolean migratory;
     private float weight;
 
+    // constructors
     public Bird() {
     }
 
@@ -73,6 +76,7 @@ public class Bird implements BirdInterface, Comparable<Bird> {
         this.weight = weight;
     }
 
+    // setters and getters
     @Override
     public void setName(String name) {
         if (name.isEmpty()) {
@@ -179,11 +183,31 @@ public class Bird implements BirdInterface, Comparable<Bird> {
             return "Bird Name: " + name + "\nBird Type: " + type + "\nDefining Characteristics: " +
                     definingCharacteristic + "\nExtinct: " + extinct + "\nNumber of Wings: " + numberOfWings +
                     "\nPreferred Food: " + Arrays.toString(preferredFood) + "\nMigratory: " + migratory +
-                    "\nWeight: " + weight + " lbs";        }
+                    "\nWeight: " + weight + " lbs";
+        }
     }
 
     @Override
     public int compareTo(Bird otherBird) {
         return this.getName().compareTo(otherBird.getName());
+    }
+
+
+
+    // helper method to keep track of food quantity of certain bird
+    public Map<FoodList, Quantity> getFoodQuantity() {
+        Map<FoodList, Quantity> foodNeededPerMonth = new HashMap<>();
+
+        for (FoodList food : preferredFood) {
+            Quantity quantity = switch (food) {
+                case BERRIES, SEEDS, FRUITS, NUTS, VEGETATION -> new Quantity(60, "lbs");
+                case INSECTS, BUDS, LARVAE -> new Quantity(600, "units");
+                case OTHER_BIRDS, SMALL_MAMMALS, FISH, AQUATIC_INVERTEBRATES -> new Quantity(100, "units");
+                case EGGS -> new Quantity(100, "lbs");
+            };
+            foodNeededPerMonth.put(food, quantity);
+        }
+        return foodNeededPerMonth;
+
     }
 }

@@ -13,6 +13,7 @@ public class Pigeon extends Bird {
     private Boolean feedWithBirdMilk;
     private LocationList nestingLocation;
 
+    // constructors
     public Pigeon() {
     }
 
@@ -34,6 +35,7 @@ public class Pigeon extends Bird {
         this.nestingLocation = nestingLocation;
     }
 
+    // setters and getters
     public void setFeedWithBirdMilk(Boolean feedWithBirdMilk) {
         this.feedWithBirdMilk = feedWithBirdMilk;
     }

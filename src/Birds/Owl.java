@@ -13,6 +13,7 @@ public class Owl extends Bird {
     private String facialDiskColor;
     private Boolean nocturnal;
 
+    // constructors
     public Owl() {
     }
 
@@ -38,6 +39,7 @@ public class Owl extends Bird {
         this.nocturnal = nocturnal;
     }
 
+    // setters and getters
     public void setFacialDisk(Boolean facialDisk) {
         this.facialDisk = facialDisk;
     }

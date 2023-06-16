@@ -10,6 +10,7 @@ import enums.FoodList;
  */
 public class FlightlessBird extends Bird {
 
+    // constructors
     public FlightlessBird() {
     }
 

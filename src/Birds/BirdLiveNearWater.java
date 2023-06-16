@@ -14,6 +14,7 @@ public class BirdLiveNearWater extends Bird {
     private WaterType waterType;
     private String waterName;
 
+    // constructors
     public BirdLiveNearWater() {
     }
 
@@ -38,6 +39,7 @@ public class BirdLiveNearWater extends Bird {
         this.waterName = waterName;
     }
 
+    // setters and getters
     public void setWaterType(WaterType waterType) {
         this.waterType = waterType;
     }

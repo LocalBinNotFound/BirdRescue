@@ -13,6 +13,7 @@ public class Parrot extends Bird {
     private int vocabularySize;
     private String favoriteSaying;
 
+    // constructors
     public Parrot() {
     }
 
@@ -35,6 +36,7 @@ public class Parrot extends Bird {
         this.favoriteSaying = favoriteSaying;
     }
 
+    // setters and getters
     public void setShortBeak(Boolean shortBeak) {
         this.shortBeak = shortBeak;
     }
