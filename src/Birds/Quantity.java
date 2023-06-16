@@ -1,22 +1,7 @@
 package Birds;
 
 /**
- * Helper class that associates food quantity with food unit.
+ * Records quantity of food with associated unit.
  */
-public class Quantity {
-    private int quantity;
-    private String unit;
-
-    public Quantity(int quantity, String unit) {
-        this.quantity = quantity;
-        this.unit = unit;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public String getUnit() {
-        return unit;
-    }
+public record Quantity(int quantity, String unit) {
 }

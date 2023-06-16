@@ -60,12 +60,12 @@ public class Conservatory {
             for (FoodList food : preferredFood) {
                 Quantity quantity = foodEachBird.get(food);
                 totalFoodRequired.merge(food, quantity,
-                        (q1, q2) -> new Quantity(q1.getQuantity() + q2.getQuantity(), q1.getUnit()));
+                        (q1, q2) -> new Quantity(q1.quantity() + q2.quantity(), q1.unit()));
             }
         }
         totalFoodRequired.forEach((food, quantity) -> {
             foodString.append(" * ").append(food).append(" - ");
-            foodString.append(quantity.getQuantity()).append(" ").append(quantity.getUnit()).append("\n");
+            foodString.append(quantity.quantity()).append(" ").append(quantity.unit()).append("\n");
         });
 
         return foodString.toString();
@@ -102,13 +102,11 @@ public class Conservatory {
         if (aviary.getNumberOfBirds() < maxNumEachAviary && !newBird.isExtinct()) {
             if (aviary.getNumberOfBirds() == 0) {
                 aviary.addBird(newBird);
-                System.out.println(newBird.getName() + " is assigned to Aviary " + aviaryLocation);
             } else {
                 if ((isCertainBird(newBird, BirdType.FLIGHTLESS_BIRD) && aviary.containsCertainBird(BirdType.FLIGHTLESS_BIRD))
                         || (isCertainBird(newBird, BirdType.BIRD_OF_PREY) && aviary.containsCertainBird(BirdType.BIRD_OF_PREY))
                         || (isCertainBird(newBird, BirdType.WATERFOWL) && aviary.containsCertainBird(BirdType.WATERFOWL))) {
                     aviary.addBird(newBird);
-                    System.out.println(newBird.getName() + " is assigned to Aviary " + aviaryLocation);
                 } else {
                     System.out.println(newBird.getName() + " cannot be assigned to Aviary " + aviaryLocation + "!");
                 }
