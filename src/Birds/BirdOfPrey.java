@@ -3,6 +3,8 @@ package Birds;
 import enums.BirdType;
 import enums.FoodList;
 
+import java.util.Arrays;
+
 /**
  * Represents a bird of prey, known for its hunting and feeding habits.
  * This class extends the {@link Birds.Bird} class and inherits its properties and behaviors.
@@ -39,5 +41,34 @@ public class BirdOfPrey extends Bird {
 
     public Boolean hasSharpBeak() {
         return sharpBeak;
+    }
+
+    @Override
+    public String toString() {
+        if (getWeight() <= 1) {
+            return ("""
+                    Bird Name: %s
+                    Bird Type: %s
+                    Defining Characteristics: %s
+                    Extinct: %s
+                    Number of Wings: %d
+                    Preferred Food: %s
+                    Migratory: %s
+                    Weight: %s lb
+                    Sharp Beak: %s""").formatted(getName(), getType(), getDefiningCharacteristic(), isExtinct(),
+                    getNumberOfWings(), Arrays.toString(getPreferredFood()), isMigratory(), getWeight(),sharpBeak);
+        } else {
+            return ("""
+                    Bird Name: %s
+                    Bird Type: %s
+                    Defining Characteristics: %s
+                    Extinct: %s
+                    Number of Wings: %d
+                    Preferred Food: %s
+                    Migratory: %s
+                    Weight: %s lbs
+                    Sharp Beak: %s""").formatted(getName(), getType(), getDefiningCharacteristic(), isExtinct(),
+                    getNumberOfWings(), Arrays.toString(getPreferredFood()), isMigratory(), getWeight(),sharpBeak);
+        }
     }
 }

@@ -3,6 +3,8 @@ package Birds;
 import enums.BirdType;
 import enums.FoodList;
 
+import java.util.Arrays;
+
 /**
  * Represents an owl, a bird that has distinguished facial disk that frames its eyes and bill.
  * This class extends the {@link Birds.Bird} class and inherits its properties and behaviors.
@@ -69,5 +71,40 @@ public class Owl extends Bird {
 
     public void sleepHours(int hours) {
         System.out.println("This owl sleeps for " + hours + " hours.");
+    }
+
+    @Override
+    public String toString() {
+        if (getWeight() <= 1) {
+            return ("""
+                    Bird Name: %s
+                    Bird Type: %s
+                    Defining Characteristics: %s
+                    Extinct: %s
+                    Number of Wings: %d
+                    Preferred Food: %s
+                    Migratory: %s
+                    Weight: %s lb
+                    Facial Disk: %s
+                    Facial Disk Color: %s
+                    Nocturnal: %s""").formatted(getName(), getType(), getDefiningCharacteristic(), isExtinct(),
+                    getNumberOfWings(), Arrays.toString(getPreferredFood()), isMigratory(), getWeight(),facialDisk,
+                    facialDiskColor, nocturnal);
+        } else {
+            return ("""
+                    Bird Name: %s
+                    Bird Type: %s
+                    Defining Characteristics: %s
+                    Extinct: %s
+                    Number of Wings: %d
+                    Preferred Food: %s
+                    Migratory: %s
+                    Weight: %s lbs
+                    Facial Disk: %s
+                    Facial Disk Color: %s
+                    Nocturnal: %s""").formatted(getName(), getType(), getDefiningCharacteristic(), isExtinct(),
+                    getNumberOfWings(), Arrays.toString(getPreferredFood()), isMigratory(), getWeight(),facialDisk,
+                    facialDiskColor, nocturnal);
+        }
     }
 }

@@ -3,6 +3,8 @@ package Birds;
 import enums.BirdType;
 import enums.FoodList;
 
+import java.util.Arrays;
+
 /**
  * Represents a parrot, known for its intelligence and ability to mimic sounds.
  * This class extends the {@link Birds.Bird} class and inherits its properties and behaviors.
@@ -63,5 +65,40 @@ public class Parrot extends Bird {
 
     public void mimicMySound(String mySound) {
         System.out.println(mySound);
+    }
+
+    @Override
+    public String toString() {
+        if (getWeight() <= 1) {
+            return ("""
+                    Bird Name: %s
+                    Bird Type: %s
+                    Defining Characteristics: %s
+                    Extinct: %s
+                    Number of Wings: %d
+                    Preferred Food: %s
+                    Migratory: %s
+                    Weight: %s lb
+                    Short Beak: %s
+                    Vocabulary Size: %d
+                    Favorite Saying: %s""").formatted(getName(), getType(), getDefiningCharacteristic(), isExtinct(),
+                    getNumberOfWings(), Arrays.toString(getPreferredFood()), isMigratory(), getWeight(),shortBeak,
+                    vocabularySize, favoriteSaying);
+        } else {
+            return ("""
+            Bird Name: %s
+            Bird Type: %s
+            Defining Characteristics: %s
+            Extinct: %s
+            Number of Wings: %d
+            Preferred Food: %s
+            Migratory: %s
+            Weight: %s lbs
+            Short Beak: %s
+            Vocabulary Size: %d
+            Favorite Saying: %s""").formatted(getName(), getType(), getDefiningCharacteristic(), isExtinct(),
+                    getNumberOfWings(), Arrays.toString(getPreferredFood()), isMigratory(), getWeight(),shortBeak,
+                    vocabularySize, favoriteSaying);
+        }
     }
 }

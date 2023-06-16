@@ -8,7 +8,6 @@ import org.junit.Test;
 
 public class BirdTest {
     private Bird sparrow;
-    private Bird invalidSparrow;
 
     @Before
     public void init() {
@@ -69,7 +68,7 @@ public class BirdTest {
 
         // Check exceptions for constructor:
             // Check exception for empty name
-        Assert.assertThrows(IllegalArgumentException.class, () -> invalidSparrow = new Bird("",
+        Assert.assertThrows(IllegalArgumentException.class, () -> new Bird("",
                 BirdType.OTHER_TYPE,
                 "has a gray head, a white cheek, a black bib and a rufous neck",
                 false,
@@ -77,7 +76,7 @@ public class BirdTest {
                 new FoodList[] {FoodList.INSECTS, FoodList.SEEDS}));
 
             // Check exception for empty defining characteristic
-        Assert.assertThrows(IllegalArgumentException.class, () -> invalidSparrow = new Bird("Sparrow",
+        Assert.assertThrows(IllegalArgumentException.class, () -> new Bird("Sparrow",
                 BirdType.OTHER_TYPE,
                 "",
                 false,
@@ -85,7 +84,7 @@ public class BirdTest {
                 new FoodList[] {FoodList.INSECTS, FoodList.SEEDS}));
 
             // Check exception for negative number of wings
-        Assert.assertThrows(IllegalArgumentException.class, () -> invalidSparrow = new Bird("Sparrow",
+        Assert.assertThrows(IllegalArgumentException.class, () -> new Bird("Sparrow",
                 BirdType.OTHER_TYPE,
                 "has a gray head, a white cheek, a black bib and a rufous neck",
                 false,
@@ -93,7 +92,7 @@ public class BirdTest {
                 new FoodList[] {FoodList.INSECTS, FoodList.SEEDS}));
 
             // Check exception for empty preferred food list
-        Assert.assertThrows(IllegalArgumentException.class, () -> invalidSparrow = new Bird("Sparrow",
+        Assert.assertThrows(IllegalArgumentException.class, () -> new Bird("Sparrow",
                 BirdType.OTHER_TYPE,
                 "has a gray head, a white cheek, a black bib and a rufous neck",
                 false,
@@ -101,7 +100,7 @@ public class BirdTest {
                 new FoodList[] {}));
 
             // Check exception for negative weight
-        Assert.assertThrows(IllegalArgumentException.class, () -> invalidSparrow = new Bird("Sparrow",
+        Assert.assertThrows(IllegalArgumentException.class, () -> new Bird("Sparrow",
                 BirdType.OTHER_TYPE,
                 "has a gray head, a white cheek, a black bib and a rufous neck",
                 false,

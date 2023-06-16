@@ -4,6 +4,8 @@ import enums.BirdType;
 import enums.FoodList;
 import enums.WaterType;
 
+import java.util.Arrays;
+
 /**
  * Represents a waterfowl that also lives near water but has long necks.
  * This class extends the {@link Birds.Bird} class and inherits its properties and behaviors.
@@ -65,5 +67,44 @@ public class Waterfowl extends BirdLiveNearWater {
 
     public Boolean canSwim() {
         return swim;
+    }
+
+    @Override
+    public String toString() {
+        if (getWeight() <= 1) {
+            return ("""
+                    Bird Name: %s
+                    Bird Type: %s
+                    Defining Characteristics: %s
+                    Extinct: %s
+                    Number of Wings: %d
+                    Preferred Food: %s
+                    Migratory: %s
+                    Weight: %s lb
+                    Water Type: %s
+                    Water Name: %s
+                    Webbed Feet: %s
+                    Neck Length: %d inches
+                    Can Swim: %s""").formatted(getName(), getType(), getDefiningCharacteristic(), isExtinct(),
+                    getNumberOfWings(), Arrays.toString(getPreferredFood()), isMigratory(), getWeight(),getWaterType(),
+                    getWaterName(), webbedFeet, neckLength, swim);
+        } else {
+            return ("""
+            Bird Name: %s
+            Bird Type: %s
+            Defining Characteristics: %s
+            Extinct: %s
+            Number of Wings: %d
+            Preferred Food: %s
+            Migratory: %s
+            Weight: %s lbs
+            Water Type: %s
+            Water Name: %s
+            Webbed Feet: %s
+            Neck Length: %d inches
+            Can Swim: %s""").formatted(getName(), getType(), getDefiningCharacteristic(), isExtinct(),
+                    getNumberOfWings(), Arrays.toString(getPreferredFood()), isMigratory(), getWeight(),getWaterType(),
+                    getWaterName(), webbedFeet, neckLength, swim);
+        }
     }
 }

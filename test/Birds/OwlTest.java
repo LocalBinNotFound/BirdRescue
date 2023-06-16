@@ -17,19 +17,19 @@ public class OwlTest {
         northernHawkOwl.setDefiningCharacteristic("diurnal owl with a heart-shaped face");
         northernHawkOwl.setExtinct(false);
         northernHawkOwl.setNumberOfWings(2);
-        northernHawkOwl.setPreferredFood(new FoodList[] {FoodList.OTHER_BIRDS, FoodList.SMALL_MAMMALS});
+        northernHawkOwl.setPreferredFood(new FoodList[] {FoodList.SMALL_MAMMALS});
         northernHawkOwl.setMigratory(false);
         northernHawkOwl.setWeight(1.0F);
-    }
-
-    @Test
-    public void TestSettersAndGetters() {
         northernHawkOwl.setFacialDisk(true);
         northernHawkOwl.setFacialDiskColor("Beige");
         northernHawkOwl.setNocturnal(false);
+    }
+
+    @Test
+    public void TestGetters() {
         Assert.assertEquals(true,northernHawkOwl.hasFacialDisk());
         Assert.assertEquals("Beige",northernHawkOwl.getFacialDiskColor());
-        Assert.assertEquals(false, northernHawkOwl.isNocturnal());
+        Assert.assertNotEquals(true, northernHawkOwl.isNocturnal());
     }
 
     @Test

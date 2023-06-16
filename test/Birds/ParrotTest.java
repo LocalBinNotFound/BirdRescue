@@ -19,13 +19,13 @@ public class ParrotTest {
                 new FoodList[]{FoodList.SEEDS, FoodList.FRUITS, FoodList.NUTS, FoodList.BERRIES, FoodList.VEGETATION},
                 false,
                 1.2F);
-    }
-
-    @Test
-    public void TestSettersAndGetters() {
         africanGrey.setShortBeak(true);
         africanGrey.setVocabularySize(300);
         africanGrey.setFavoriteSaying("I am an african grey and I know so many words!");
+    }
+
+    @Test
+    public void TestGetters() {
         Assert.assertEquals(true, africanGrey.hasShortBeak());
         Assert.assertEquals(300, africanGrey.getVocabularySize());
         Assert.assertEquals("I am an african grey and I know so many words!", africanGrey.getFavoriteSaying());

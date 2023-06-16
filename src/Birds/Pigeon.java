@@ -4,6 +4,8 @@ import enums.BirdType;
 import enums.FoodList;
 import enums.LocationList;
 
+import java.util.Arrays;
+
 /**
  * Represents a pigeon, known for feeding their young "bird milk".
  * This class extends the {@link Birds.Bird} class and inherits its properties and behaviors.
@@ -50,5 +52,38 @@ public class Pigeon extends Bird {
 
     public LocationList getNestingLocation() {
         return nestingLocation;
+    }
+
+    @Override
+    public String toString() {
+        if (getWeight() <= 1) {
+            return ("""
+                    Bird Name: %s
+                    Bird Type: %s
+                    Defining Characteristics: %s
+                    Extinct: %s
+                    Number of Wings: %d
+                    Preferred Food: %s
+                    Migratory: %s
+                    Weight: %s lb
+                    Feed with Bird Milk: %s
+                    Nesting Location: %s""").formatted(getName(), getType(), getDefiningCharacteristic(), isExtinct(),
+                    getNumberOfWings(), Arrays.toString(getPreferredFood()), isMigratory(), getWeight(),feedWithBirdMilk,
+                    nestingLocation);
+        } else {
+            return ("""
+                    Bird Name: %s
+                    Bird Type: %s
+                    Defining Characteristics: %s
+                    Extinct: %s
+                    Number of Wings: %d
+                    Preferred Food: %s
+                    Migratory: %s
+                    Weight: %s lbs
+                    Feed with Bird Milk: %s
+                    Nesting Location: %s""").formatted(getName(), getType(), getDefiningCharacteristic(), isExtinct(),
+                    getNumberOfWings(), Arrays.toString(getPreferredFood()), isMigratory(), getWeight(),feedWithBirdMilk,
+                    nestingLocation);
+        }
     }
 }

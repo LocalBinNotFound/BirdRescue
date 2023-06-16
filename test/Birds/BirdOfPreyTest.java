@@ -85,6 +85,7 @@ public class BirdOfPreyTest {
         baldEagle.setPreferredFood(new FoodList[] {FoodList.OTHER_BIRDS, FoodList.SMALL_MAMMALS, FoodList.FISH});
         baldEagle.setMigratory(true);
         baldEagle.setWeight(13.0F);
+        baldEagle.setSharpBeak(true);
         System.out.println(baldEagle);
     }
 }

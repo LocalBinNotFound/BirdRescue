@@ -173,25 +173,36 @@ public class Bird implements BirdInterface, Comparable<Bird> {
     }
 
     @Override
-    public String toString() {
-        if (weight <= 1) {
-            return "Bird Name: " + name + "\nBird Type: " + type + "\nDefining Characteristics: " +
-                    definingCharacteristic + "\nExtinct: " + extinct + "\nNumber of Wings: " + numberOfWings +
-                    "\nPreferred Food: " + Arrays.toString(preferredFood) + "\nMigratory: " + migratory +
-                    "\nWeight: " + weight + " lb";
-        } else {
-            return "Bird Name: " + name + "\nBird Type: " + type + "\nDefining Characteristics: " +
-                    definingCharacteristic + "\nExtinct: " + extinct + "\nNumber of Wings: " + numberOfWings +
-                    "\nPreferred Food: " + Arrays.toString(preferredFood) + "\nMigratory: " + migratory +
-                    "\nWeight: " + weight + " lbs";
-        }
-    }
-
-    @Override
     public int compareTo(Bird otherBird) {
         return this.getName().compareTo(otherBird.getName());
     }
 
+    @Override
+    public String toString() {
+        if (weight <= 1) {
+            return ("""
+                    Bird Name: %s
+                    Bird Type: %s
+                    Defining Characteristics: %s
+                    Extinct: %s
+                    Number of Wings: %d
+                    Preferred Food: %s
+                    Migratory: %s
+                    Weight: %s lb""").formatted(name, type, definingCharacteristic, extinct, numberOfWings,
+                    Arrays.toString(preferredFood), migratory, weight);
+        } else {
+            return ("""
+                    Bird Name: %s
+                    Bird Type: %s
+                    Defining Characteristics: %s
+                    Extinct: %s
+                    Number of Wings: %d
+                    Preferred Food: %s
+                    Migratory: %s
+                    Weight: %s lbs""").formatted(name, type, definingCharacteristic, extinct, numberOfWings,
+                    Arrays.toString(preferredFood), migratory, weight);
+        }
+    }
 
 
     // helper method to keep track of food quantity of certain bird

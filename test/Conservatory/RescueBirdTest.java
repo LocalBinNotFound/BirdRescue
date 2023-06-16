@@ -5,7 +5,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class RescueBirdTest extends Init {
-    private BirdOfPrey hawk;
 
     @Test
     public void Test() {
@@ -17,6 +16,7 @@ public class RescueBirdTest extends Init {
         Assert.assertTrue(conservatory.hasBird(baldEagle));
 
         // check if successfully bring bird into conservatory
+        BirdOfPrey hawk = new BirdOfPrey();
         Assert.assertFalse(conservatory.hasBird(hawk));
         conservatory.rescueNewBird(hawk);
         Assert.assertTrue(conservatory.hasBird(hawk));
