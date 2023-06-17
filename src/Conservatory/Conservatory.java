@@ -7,6 +7,10 @@ import enums.FoodList;
 
 import java.util.*;
 
+/**
+ * Represents the conservatory that is used to bring in rescued birds.
+ * The conservatory has 20 aviaries, each can house at most 5 birds.
+ */
 public class Conservatory {
     private final List<Bird> birds;
     private final List<Aviary> aviaries;
@@ -41,7 +45,6 @@ public class Conservatory {
     public static Boolean isCertainBird(Bird bird, BirdType expectedType) {
         return bird.getType() == expectedType;
     }
-
 
     // rescue new bird and bring into conservatory
     public void rescueNewBird(Bird newBird) {

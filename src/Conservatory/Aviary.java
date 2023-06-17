@@ -5,6 +5,9 @@ import enums.BirdType;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Represents a single aviary that can house at most 5 birds.
+ */
 public class Aviary {
     private List<Bird> birds;
 
