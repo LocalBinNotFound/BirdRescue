@@ -37,6 +37,9 @@ public class PrintMapTest extends Init {
         conservatory.assignToAviary(goose, 6);
         conservatory.assignToAviary(duck, 6);
         conservatory.assignToAviary(baldEagle, 7);
+        conservatory.assignToAviary(snowyOwl, 20);
+        conservatory.assignToAviary(cockatiel, 20);
+        conservatory.assignToAviary(icePigeon, 20);
         Assert.assertEquals("""
                 Printing aviary locations and birds they house:
                 Aviary 1: Empty!
@@ -63,7 +66,10 @@ public class PrintMapTest extends Init {
                 Aviary 17: Empty!
                 Aviary 18: Empty!
                 Aviary 19: Empty!
-                Aviary 20: Empty!
+                Aviary 20:
+                 * Snowy owl - Owl - the owl known to the world from Harry Potter movies
+                 * Cockatiel - Parrot - parrot with a proud posture, small dark eyes and a long tail
+                 * Ice pigeon - Pigeon - pigeon that has a white colored body throughout
                 """, conservatory.printMap());
     }
 }

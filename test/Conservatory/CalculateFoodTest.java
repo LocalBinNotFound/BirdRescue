@@ -12,12 +12,14 @@ public class CalculateFoodTest extends Init {
     public void Test() {
         Assert.assertEquals("""
                 Food requirements:
+                 * Small mammals - 200 units
+                 * Other birds - 200 units
+                 * Insects - 600 units
                  * Aquatic invertebrates - 200 units
-                 * Vegetation - 60 lbs
-                 * Seeds - 60 lbs
-                 * Small mammals - 100 units
                  * Fish - 300 units
-                 * Other birds - 100 units
+                 * Berries - 120 lbs
+                 * Seeds - 60 lbs
+                 * Vegetation - 60 lbs
                  """, conservatory.calculateFood());
 
 
@@ -26,15 +28,17 @@ public class CalculateFoodTest extends Init {
                 new FoodList[]{FoodList.SMALL_MAMMALS}, false, 1.0F);
         conservatory.rescueNewBird(northernHawkOwl);
 
-        // Small mammals 100 units -> 200 units
+        // Small mammals 200 units -> 300 units
         Assert.assertEquals("""
                 Food requirements:
+                 * Small mammals - 300 units
+                 * Other birds - 200 units
+                 * Insects - 600 units
                  * Aquatic invertebrates - 200 units
-                 * Vegetation - 60 lbs
-                 * Seeds - 60 lbs
-                 * Small mammals - 200 units
                  * Fish - 300 units
-                 * Other birds - 100 units
+                 * Berries - 120 lbs
+                 * Seeds - 60 lbs
+                 * Vegetation - 60 lbs
                 """, conservatory.calculateFood());
 
 
@@ -43,20 +47,20 @@ public class CalculateFoodTest extends Init {
                 false, 2, new FoodList[]{FoodList.BERRIES, FoodList.INSECTS, FoodList.LARVAE}, true, 3.0F);
         conservatory.rescueNewBird(columbidae);
 
-        // Insects 0 -> 600 units
+        // Insects 600 -> 1200 units
         // Larvae  0 -> 600 units
-        // Berries 0 -> 60 lbs
+        // Berries 120 -> 180 lbs
         Assert.assertEquals("""
                 Food requirements:
-                 * Insects - 600 units
-                 * Larvae - 600 units
-                 * Berries - 60 lbs
+                 * Small mammals - 300 units
+                 * Other birds - 200 units
+                 * Insects - 1200 units
                  * Aquatic invertebrates - 200 units
-                 * Vegetation - 60 lbs
-                 * Seeds - 60 lbs
-                 * Small mammals - 200 units
                  * Fish - 300 units
-                 * Other birds - 100 units
+                 * Larvae - 600 units
+                 * Berries - 180 lbs
+                 * Seeds - 60 lbs
+                 * Vegetation - 60 lbs
                 """, conservatory.calculateFood());
     }
 }

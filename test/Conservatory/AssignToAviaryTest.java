@@ -31,7 +31,18 @@ public class AssignToAviaryTest extends Init {
         conservatory.assignToAviary(baldEagle, 7);
         Assert.assertTrue(conservatory.getAviary(7).containsBird(baldEagle));
 
-        // print already in aviary if assigned
-        conservatory.assignToAviary(baldEagle, 7);
+        // other types of birds can mix and match
+        conservatory.assignToAviary(snowyOwl, 5);
+        conservatory.assignToAviary(snowyOwl, 20);
+        conservatory.assignToAviary(cockatiel, 6);
+        conservatory.assignToAviary(cockatiel, 20);
+        conservatory.assignToAviary(icePigeon, 7);
+        conservatory.assignToAviary(icePigeon, 20);
+        Assert.assertTrue(conservatory.getAviary(20).containsBird(snowyOwl));
+        Assert.assertTrue(conservatory.getAviary(20).containsBird(cockatiel));
+        Assert.assertTrue(conservatory.getAviary(20).containsBird(icePigeon));
+
+        // print already assigned
+        conservatory.assignToAviary(icePigeon, 15);
     }
 }

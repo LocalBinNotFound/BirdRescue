@@ -13,5 +13,11 @@ public class LookUpAviaryTest extends Init {
         Assert.assertEquals("Bird is not found in any Aviary!", conservatory.lookupBird(kiwi));
         conservatory.assignToAviary(kiwi, 5);
         Assert.assertEquals("Bird found in Aviary 5", conservatory.lookupBird(kiwi));
+
+        conservatory.assignToAviary(icePigeon, 5);
+        Assert.assertEquals("Bird is not found in any Aviary!", conservatory.lookupBird(icePigeon));
+        conservatory.assignToAviary(icePigeon, 15);
+        Assert.assertEquals("Bird found in Aviary 15", conservatory.lookupBird(icePigeon));
+
     }
 }

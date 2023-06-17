@@ -8,8 +8,8 @@ import enums.FoodList;
 import java.util.*;
 
 public class Conservatory {
-    private List<Bird> birds;
-    private List<Aviary> aviaries;
+    private final List<Bird> birds;
+    private final List<Aviary> aviaries;
     private final int numOfAviaries = 20;
     private final int maxNumEachAviary = 5;
 
@@ -67,7 +67,6 @@ public class Conservatory {
             foodString.append(" * ").append(food).append(" - ");
             foodString.append(quantity.quantity()).append(" ").append(quantity.unit()).append("\n");
         });
-
         return foodString.toString();
     }
 
@@ -91,10 +90,8 @@ public class Conservatory {
             System.out.println("The bird is extinct and cannot be added to the aviary!");
             return;
         }
-
-        String aviaryLookUp = lookupBird(newBird);
-        if (!aviaryLookUp.equals("Bird is not found in any Aviary!")) {
-            System.out.println(newBird.getName() + " is already assigned to " + aviaryLookUp.substring(14));
+        if (!lookupBird(newBird).equals("Bird is not found in any Aviary!")) {
+            System.out.println(newBird.getName() + " has already been assigned to " + lookupBird(newBird).substring(14));
             return;
         }
 
@@ -106,6 +103,10 @@ public class Conservatory {
                 if ((isCertainBird(newBird, BirdType.FLIGHTLESS_BIRD) && aviary.containsCertainBird(BirdType.FLIGHTLESS_BIRD))
                         || (isCertainBird(newBird, BirdType.BIRD_OF_PREY) && aviary.containsCertainBird(BirdType.BIRD_OF_PREY))
                         || (isCertainBird(newBird, BirdType.WATERFOWL) && aviary.containsCertainBird(BirdType.WATERFOWL))) {
+                    aviary.addBird(newBird);
+                } else if (!(aviary.containsCertainBird(BirdType.FLIGHTLESS_BIRD)
+                         || aviary.containsCertainBird(BirdType.BIRD_OF_PREY)
+                         || aviary.containsCertainBird(BirdType.WATERFOWL))) {
                     aviary.addBird(newBird);
                 } else {
                     System.out.println(newBird.getName() + " cannot be assigned to Aviary " + aviaryLocation + "!");
