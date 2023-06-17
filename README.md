@@ -1,4 +1,4 @@
-# BirdRescueStation
+# Bird Rescue Station
 
 This project implements several classifications of birds (derived in part from BioExplorer.net) including:
  - Bird of prey: birds with sharp, hooked beaks with visible nostrils. 
