@@ -8,7 +8,7 @@ public class PrintIndexTest extends Init {
     @Test
     public void Test() {
         Assert.assertEquals("""
-                Printing all birds in alphabetical order and their aviary location:
+                Printing all birds in alphabetical order and aviary locations:
                  * Bald eagle - Bird is not found in any Aviary!
                  * Cockatiel - Bird is not found in any Aviary!
                  * Duck - Bird is not found in any Aviary!
@@ -29,7 +29,7 @@ public class PrintIndexTest extends Init {
         conservatory.assignToAviary(icePigeon, 20);
 
         Assert.assertEquals("""
-                Printing all birds in alphabetical order and their aviary location:
+                Printing all birds in alphabetical order and aviary locations:
                  * Bald eagle - Bird found in Aviary 7
                  * Cockatiel - Bird found in Aviary 20
                  * Duck - Bird found in Aviary 6

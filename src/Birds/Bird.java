@@ -205,7 +205,7 @@ public class Bird implements BirdInterface, Comparable<Bird> {
     }
 
 
-    // helper method to keep track of food quantity of certain bird
+    // keep track of food quantity of certain bird
     public Map<FoodList, Quantity> getFoodQuantity() {
         Map<FoodList, Quantity> foodNeededPerMonth = new HashMap<>();
 

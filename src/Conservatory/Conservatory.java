@@ -57,7 +57,7 @@ public class Conservatory {
         for (Bird bird : birds) {
             FoodList[] preferredFood = bird.getPreferredFood();
             Map<FoodList, Quantity> foodEachBird = bird.getFoodQuantity();
-            for (FoodList food : preferredFood) {
+            for (FoodList food : preferredFood) {       // combine food values
                 Quantity quantity = foodEachBird.get(food);
                 totalFoodRequired.merge(food, quantity,
                         (q1, q2) -> new Quantity(q1.quantity() + q2.quantity(), q1.unit()));
@@ -83,6 +83,8 @@ public class Conservatory {
 
     // assign bird to aviary following criteria
     public void assignToAviary(Bird newBird, int aviaryLocation) {
+
+        // check aviary number, bird extinct status, if bird has already been assigned to aviary
         if (aviaryLocation < 1 || aviaryLocation > numOfAviaries) {
             throw new IllegalArgumentException("Aviary number must be between 1-20!");
         }
@@ -96,15 +98,15 @@ public class Conservatory {
         }
 
         Aviary aviary = aviaries.get(aviaryLocation - 1);
-        if (aviary.getNumberOfBirds() < maxNumEachAviary && !newBird.isExtinct()) {
+        if (aviary.getNumberOfBirds() < maxNumEachAviary) {
             if (aviary.getNumberOfBirds() == 0) {
                 aviary.addBird(newBird);
-            } else {
+            } else {    // if bird type match for three
                 if ((isCertainBird(newBird, BirdType.FLIGHTLESS_BIRD) && aviary.containsCertainBird(BirdType.FLIGHTLESS_BIRD))
                         || (isCertainBird(newBird, BirdType.BIRD_OF_PREY) && aviary.containsCertainBird(BirdType.BIRD_OF_PREY))
                         || (isCertainBird(newBird, BirdType.WATERFOWL) && aviary.containsCertainBird(BirdType.WATERFOWL))) {
                     aviary.addBird(newBird);
-                } else if (!(aviary.containsCertainBird(BirdType.FLIGHTLESS_BIRD)
+                } else if (!(aviary.containsCertainBird(BirdType.FLIGHTLESS_BIRD)   // if none of three exists in aviary
                          || aviary.containsCertainBird(BirdType.BIRD_OF_PREY)
                          || aviary.containsCertainBird(BirdType.WATERFOWL))) {
                     aviary.addBird(newBird);
@@ -156,7 +158,7 @@ public class Conservatory {
 
     // print all birds alphabetically and their respective locations
     public String printIndex() {
-        StringBuilder index = new StringBuilder("Printing all birds in alphabetical order and their aviary location:\n");
+        StringBuilder index = new StringBuilder("Printing all birds in alphabetical order and aviary locations:\n");
         List<Bird> sortedBirds = new ArrayList<>(birds);
         Collections.sort(sortedBirds);
         for (Bird bird : sortedBirds) {

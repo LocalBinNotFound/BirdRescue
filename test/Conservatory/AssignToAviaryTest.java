@@ -22,6 +22,12 @@ public class AssignToAviaryTest extends Init {
         Assert.assertFalse(conservatory.getAviary(5).containsBird(goose));
         conservatory.assignToAviary(goose, 6);
         Assert.assertTrue(conservatory.getAviary(6).containsBird(goose));
+        conservatory.assignToAviary(duck, 6);
+        Assert.assertTrue(conservatory.getAviary(6).containsBird(duck));
+
+        // remove bird from one aviary
+        conservatory.getAviary(6).removeBird(goose);
+        Assert.assertFalse(conservatory.getAviary(6).containsBird(goose));
 
         // BirdOfPrey is now allowed in FlightlessBird or Waterfowl aviary
         conservatory.assignToAviary(baldEagle, 5);

@@ -22,8 +22,6 @@ public class CalculateFoodTest extends Init {
                  * Vegetation - 60 lbs
                  """, conservatory.calculateFood());
 
-
-
         Owl northernHawkOwl = new Owl("Northern hawk owl", BirdType.OWL, "diurnal owl with a heart-shaped face", false, 2,
                 new FoodList[]{FoodList.SMALL_MAMMALS}, false, 1.0F);
         conservatory.rescueNewBird(northernHawkOwl);
@@ -40,8 +38,6 @@ public class CalculateFoodTest extends Init {
                  * Seeds - 60 lbs
                  * Vegetation - 60 lbs
                 """, conservatory.calculateFood());
-
-
 
         Pigeon columbidae = new Pigeon("Columbidae", BirdType.PIGEON, "pigeon that have a small green head and large wings",
                 false, 2, new FoodList[]{FoodList.BERRIES, FoodList.INSECTS, FoodList.LARVAE}, true, 3.0F);
