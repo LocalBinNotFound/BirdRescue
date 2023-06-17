@@ -33,6 +33,3 @@ A bird rescue station (Conservatory) has also been set up that allows:
  - print a map that lists all aviaries and birds they house with information
  - print an index that lists all birds rescued in alphabetical order and their respective aviary location
 
-Test includes:
- - each method in Conservatory and Aviary
- - exceptions check
